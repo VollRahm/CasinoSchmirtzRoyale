@@ -1,0 +1,74 @@
+﻿<Window x:Class="Casino_Schmirtz_Royale.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Casino_Schmirtz_Royale"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Casino Schmirtz Royale" Height="700" Width="1269" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="Assets/background.png" Stretch="UniformToFill"></ImageBrush>
+    </Window.Background>
+    <Grid>
+
+        <Grid Margin="100,40,100,150" x:Name="SlotrollGrid">
+            <!--Height: 481-->
+            <Border BorderThickness="4" CornerRadius="40" BorderBrush="Black" Grid.ColumnSpan="3" ClipToBounds="True">
+                <Border.Background>
+                    <SolidColorBrush x:Name="CanvasBackgroundBrush" Color="White"></SolidColorBrush>
+                </Border.Background>
+            </Border>
+
+            <Canvas Grid.Column="0" ClipToBounds="True" x:Name="lCanv">
+                <Rectangle Height="120" Width="120" Canvas.Left="130" Canvas.Top="30"></Rectangle>
+                <Rectangle Height="120" Width="120" Canvas.Left="130" Canvas.Top="180" HorizontalAlignment="Center" VerticalAlignment="Center"></Rectangle>
+                <Rectangle Height="120" Width="120" Canvas.Left="130" Canvas.Top="330"></Rectangle>
+            </Canvas>
+
+            <Canvas Grid.Column="1" ClipToBounds="True" x:Name="mCanv">
+
+            </Canvas>
+
+            <Canvas Grid.Column="2" ClipToBounds="True" x:Name="rCanv">
+
+            </Canvas>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+        <Grid x:Name="InfoPanelGrid" Margin="100,540,100,20">
+            <Border BorderThickness="4" CornerRadius="20" BorderBrush="Black">
+                <Border.Background>
+                    <SolidColorBrush x:Name="InfoPanelBrush" Color="Orange"></SolidColorBrush>
+                </Border.Background>
+            </Border>
+
+            <Button BorderThickness="2" x:Name="respinBtn" Click="respinBtn_Click" Style="{DynamicResource RoundCorner}" BorderBrush="Black" Foreground="#FF51B851" Margin="0,0,20,0" HorizontalAlignment="Right" Background="#FF001100" Width="80" Height="80" VerticalAlignment="Center">
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="🔁" FontSize="50" VerticalContentAlignment="Center" Foreground="Black" Padding="0,0,0,6"/>
+            </Button>
+
+            <Label x:Name="winDisplayLbl" HorizontalAlignment="Center" Content="" FontWeight="Heavy" FontSize="50" Foreground="Red"/>
+
+            <Label x:Name="balanceLbl" HorizontalAlignment="Left" Foreground="Black" Content="Balance: 1000" VerticalAlignment="Bottom" FontSize="30" 
+                   Margin="10, 0,0,0" FontWeight="Heavy"/>
+
+        </Grid>
+
+        <Grid x:Name="settingsGrid" Margin="0,576,0,0">
+            <Label x:Name="darkModeLbl" Content="Dark Mode" FontSize="20" Margin="548,0,0,32" FontWeight="Black" Foreground="Black" VerticalAlignment="Bottom" HorizontalAlignment="Left" ></Label>
+            <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" x:Name="darkModeSwitch"  ToolTip="Dark Mode" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="70" Margin="661,0,0,13" Width="58" Foreground="#FF5A13DA" Background="#FFFF1313" BorderBrush="Red"/>
+        </Grid>
+
+    </Grid>
+</Window>
